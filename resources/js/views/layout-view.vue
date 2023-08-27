@@ -5,7 +5,11 @@
 <div class="container" v-if="ready">
 <categories-view v-model="selected.categories" :categories="categories" />
 <attributes-view v-model="selected.attributes" :attributes="attributes" />
-<products-view :products="products" @goToPage="getProducts" />
+<products-view :products="products.data">
+<template #paginator>
+<paginate-view :links="products.meta.links" @goToPage="getProducts" />
+</template>
+</products-view>
 </div>
 <div v-else>Загрузка!</div>
 </template>
@@ -16,12 +20,14 @@ import axios from 'axios';
 import categoriesView from './categories-view.vue';
 import attributesView from './attributes-view.vue';
 import productsView from './products-view.vue';
+import paginateView from './paginate-view.vue';
 
 export default {
 components: {
 categoriesView,
 attributesView,
 productsView,
+paginateView,
 },
 data() {
 return {

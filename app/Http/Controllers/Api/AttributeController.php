@@ -11,7 +11,10 @@ class AttributeController extends Controller
     //
     public function index()
     {
-        $attributes = Attribute::with('attributeValues')->get();
+		
+        $attributes = Attribute::with(['attributeValues' => function ($query) {
+			return $query->has('products');
+		}])->get();
 
         return AttributeResource::collection($attributes);
     }

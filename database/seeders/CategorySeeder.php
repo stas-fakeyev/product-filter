@@ -26,6 +26,11 @@ class CategorySeeder extends Seeder
         'name' => 'Детская одежда',
                                         'created_at' => date('Y-m-d H:i,s'),
 ],
+        [
+        'name' => 'Обувь',
+                                        'created_at' => date('Y-m-d H:i,s'),
+],
+
         ]);
     }
 }

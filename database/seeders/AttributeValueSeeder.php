@@ -54,6 +54,12 @@ class AttributeValueSeeder extends Seeder
         'attribute_id' => 3,
                                                         'created_at' => date('Y-m-d H:i,s'),
 ],
+        [
+        'name' => 'Шелк',
+        'attribute_id' => 3,
+                                                        'created_at' => date('Y-m-d H:i,s'),
+],
+
         ]);
     }
 }
